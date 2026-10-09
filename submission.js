@@ -1,7 +1,7 @@
 function createCharacter(charName, catName = null, initialSkills=[0,0,0]) {
     let fishingSkill = Number(initialSkills[0])
-    let miningSkill = initialSkills[1]
-    let farmingSkill = initialSkills[2]
+    let miningSkill = Number(initialSkills[1])
+    let farmingSkill = Number(initialSkills[2])
     // Ensure initial skills do not exceed the maximum cap of 10
     if (fishingSkill > 10)
     {
