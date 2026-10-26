@@ -28,7 +28,6 @@ const assignments = [
 
 console.log(summarizeGrades(assignments));
 
-
 // Task 2
 let letterCounter = function (letter, ignoreCapitalization) {
     return function (word) {
@@ -53,12 +52,12 @@ let letterCounter = function (letter, ignoreCapitalization) {
     };
 };
 
-function makeCharacter(characterName){
+function makeCharacter(characterName) {
     let farmingSkill = 0;
     let fishingSkill = 0;
     let name = characterName;
 
-    let levelUp = function (skill){
+    let levelUp = function (skill) {
         if (skill === "farming") {
             if (farmingSkill < 10) {
                 farmingSkill++;
@@ -70,7 +69,7 @@ function makeCharacter(characterName){
         }
     };
 
-    let showSkill = function (skill){
+    let showSkill = function (skill) {
         if (skill === "farming") {
             return farmingSkill;
         } else if (skill === "fishing") {
