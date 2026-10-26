@@ -65,6 +65,26 @@ let name = characterName
         showSkill
     }
 }
+// Task 2
+function summarizeGrades(assignments) {
+  let sum = 0;
+  const count = assignments.length;
+  const LATE_PENALTY_PER_DAY = 20;
 
+  let assignment;
+  for (let i = 0; i < count; i++) {
+    assignment = assignments[i];
+    let grade = assignment.grade;
+
+    if (assignment.daysLate > 0) {
+      const latePenalty = assignment.daysLate * LATE_PENALTY_PER_DAY;
+      grade = grade - latePenalty >= 0 ? grade - latePenalty : 0;
+    }
+    sum += grade;
+  }
+  
+  const lastGraded = assignment;
+  return { average: sum / count, lastGraded: lastGraded.id };
+}
 
 
