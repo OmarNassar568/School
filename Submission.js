@@ -4,9 +4,7 @@ function summarizeGrades(assignments) {
   const count = assignments.length;
   const LATE_PENALTY_PER_DAY = 20;
 
-  // Declared outside the loop so lastGraded can access it after the loop ends
-  let assignment; 
-
+  let assignment;
   for (let i = 0; i < count; i++) {
     assignment = assignments[i];
     let grade = assignment.grade;
@@ -27,28 +25,24 @@ const assignments = [
   { id: "5678", grade: 50, daysLate: 0},
   { id: "9876", grade: 30, daysLate: 2},
 ];
+
 console.log(summarizeGrades(assignments));
+
 
 // Task 2
 let letterCounter = function (letter, ignoreCapitalization) {
     return function (word) {
         let count = 0;
-        
-        let targetLetter;
+        let targetLetter = letter;
         if (ignoreCapitalization) {
             targetLetter = letter.toLowerCase();
-        } else {
-            targetLetter = letter;
         }
 
         for (let i = 0; i < word.length; i++) {
             let currentChar = word[i];
-            
-            let checkChar;
+            let checkChar = currentChar;
             if (ignoreCapitalization) {
                 checkChar = currentChar.toLowerCase();
-            } else {
-                checkChar = currentChar;
             }
 
             if (checkChar === targetLetter) {
